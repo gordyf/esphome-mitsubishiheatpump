@@ -776,7 +776,7 @@ void MitsubishiHeatPump::set_remote_temperature(float temp)
 void MitsubishiHeatPump::set_function_code(int code, int value)
 {
     ESP_LOGI(TAG, "Fetching function codes...");
-    heatpumpFunctions functions = hp.getFunctions();
+    heatpumpFunctions functions = hp->getFunctions();
 
     ESP_LOGI(TAG, "Setting code %d to value %d in local copy of function codes.", code, value);
     if (!functions.setValue(code, value))
@@ -786,7 +786,7 @@ void MitsubishiHeatPump::set_function_code(int code, int value)
     }
 
     ESP_LOGI(TAG, "Sending modified codes to heat pump...");
-    if (!hp.setFunctions(functions))
+    if (!hp->setFunctions(functions))
     {
         ESP_LOGE(TAG, "Failed to send modified function codes to heat pump.");
         return;
