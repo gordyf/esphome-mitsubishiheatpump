@@ -100,7 +100,7 @@ public:
     // set_remote_temp(0) to switch back to the internal sensor.
     void set_remote_temperature(float);
 
-    void MitsubishiHeatPump::set_function_code(int code, int value);
+    void set_function_code(int code, int value);
 
     void set_vertical_vane_select(esphome::select::Select *vertical_vane_select);
     void set_horizontal_vane_select(esphome::select::Select *horizontal_vane_select);
