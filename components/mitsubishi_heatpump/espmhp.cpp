@@ -773,7 +773,7 @@ void MitsubishiHeatPump::set_remote_temperature(float temp)
     this->hp->setRemoteTemperature(temp);
 }
 
-void MitsubishiHeatPump::setFunctionCode(int code, int value)
+void MitsubishiHeatPump::set_function_code(int code, int value)
 {
     ESP_LOGI(TAG, "Fetching function codes...");
     heatpumpFunctions functions = hp.getFunctions();
